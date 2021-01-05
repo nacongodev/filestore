@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'main/index'
+  resources :documents
  root 'main#index'
-
  resources:documents
 end

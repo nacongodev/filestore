@@ -1,0 +1,15 @@
+<h1>Documents</h1>
+<div class = "container">
+  <% @documents.each do |document| %>
+    <div class="jumbotron w-200">
+      <h1 class="display-4"><%= document.title %></h1>
+      <p class = "lead"><%= document.content %>
+        <hr class="my-4"></p>
+      <%= link_to 'Show', document,class:"btn btn-outline-info" %>
+      <%= link_to 'Edit', edit_document_path(document),class:"btn btn-outline-warning" %>
+      <%= link_to 'Destroy', document, class:"btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+</div>
+<br>
+<%= link_to 'New Document', new_document_path, class:"btn btn-secondary btn-lg" %>
